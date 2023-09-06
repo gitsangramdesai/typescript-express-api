@@ -36,4 +36,12 @@ router.get('/test', function (_req, res, _next) {
   })
 
 });
+
+router.get('/final', function (_req, res, _next) {
+  res.json({
+    "success":true,
+    "msg":"successfully loaded root final"
+  })
+
+});
 export default router;
