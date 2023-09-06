@@ -6,9 +6,6 @@ name: Node.js CI
 on:
   push:
     branches: ["main"]
-defaults:
-  run:
-    working-directory: dist/src
 jobs:
   build:
     runs-on: self-hosted
@@ -27,7 +24,8 @@ jobs:
       - run: npm ci
       - run: rm -rf dist
       - run: npm run build --if-present
-      - run: cd dist/src
-      - run: npm start
+      - run: |
+            cd dist/src
+            npm start
     env:
       CI: true
