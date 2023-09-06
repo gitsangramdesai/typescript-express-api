@@ -28,4 +28,12 @@ router.get('/sample', function (_req, res, _next) {
   })
 
 });
+
+router.get('/test', function (_req, res, _next) {
+  res.json({
+    "success":true,
+    "msg":"successfully loaded root page"
+  })
+
+});
 export default router;
