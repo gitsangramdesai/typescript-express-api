@@ -6,7 +6,9 @@ name: Node.js CI
 on:
   push:
     branches: ["main"]
-
+defaults:
+  run:
+    working-directory: ./dist/src
 jobs:
   build:
     runs-on: self-hosted
@@ -15,7 +17,6 @@ jobs:
       matrix:
         node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
