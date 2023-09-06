@@ -12,4 +12,12 @@ router.get('/', function (_req, res, _next) {
 
 });
 
+
+router.get('/demo', function (_req, res, _next) {
+  res.json({
+    "success":true,
+    "msg":"successfully loaded root page"
+  })
+
+});
 export default router;
