@@ -27,5 +27,6 @@ jobs:
       - run: |
           cd dist/src
           pm2 start ../bin/www.js
+          pm2 logs
     env:
       CI: true
