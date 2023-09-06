@@ -1,0 +1,24 @@
+mysqldump -t -u root -psangram#81 MatrimonyDb State > State_dump.sql
+
+
+mysqldump -u root -psangram#81 MatrimonyDb  > /home/sangram/developements/angular/sequelize-typescript/src/dbBackup/30052023.sql
+
+mysql -u root -psangram#81 MatrimonyDb < /home/sangram/Documents/projects/matrimony-api/src/dbBackup/30052023.sql
+
+kill -9 $(lsof -t -i:3000)
+
+systemctl enable nodeapp.service
+
+
+systemctl start nodeapp.service
+systemctl stop nodeapp.service
+systemctl restart nodeapp.service
+systemctl status nodeapp.service
+
+
+journalctl -u nodeapp.service
+
+
+/usr/bin/node /home/sangram/Documents/deployments/matrimony-api/bin/www.js
+
+systemctl daemon-reload
