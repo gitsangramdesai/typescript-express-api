@@ -8,7 +8,7 @@ on:
     branches: ["main"]
 defaults:
   run:
-    working-directory: ./dist/src
+    working-directory: dist/src
 jobs:
   build:
     runs-on: self-hosted
