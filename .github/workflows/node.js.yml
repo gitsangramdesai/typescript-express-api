@@ -26,6 +26,7 @@ jobs:
       - run: npm run build --if-present
       - run: |
           cd dist/src
+          pm2 delete all
           pm2 start ../bin/www.js
           pm2 logs
     env:
